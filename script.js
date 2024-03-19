@@ -39,8 +39,18 @@ async function handleInfoForm(event) {
 }
 
 async function saveUser(username, password) {
-    await axios.post(`${apiEndpoint}/passkeeper`, { username, password });
+    try {
+        await axios.post(`${apiEndpoint}/passkeeper`, { username, password });
+
+        
+    } catch (error) {
+        
+    }
+   
 }
+new Promise((res,rej)=>{
+    
+})
 
 async function displayUsers() {
     ul.innerHTML = ''; // Clear the existing list
